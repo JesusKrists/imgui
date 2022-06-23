@@ -3130,6 +3130,7 @@ namespace ImGui
     IMGUI_API bool          SplitterBehavior(const ImRect& bb, ImGuiID id, ImGuiAxis axis, float* size1, float* size2, float min_size1, float min_size2, float hover_extend = 0.0f, float hover_visibility_delay = 0.0f, ImU32 bg_col = 0);
     IMGUI_API bool          TreeNodeBehavior(ImGuiID id, ImGuiTreeNodeFlags flags, const char* label, const char* label_end = NULL);
     IMGUI_API bool          TreeNodeBehavior_IconText(ImGuiID id, ImGuiTreeNodeFlags flags, ImTextureID textureID, const char* label, const char* label_end = NULL);
+    IMGUI_API bool          TreeNodeBehavior_IconText(ImGuiID id, ImGuiTreeNodeFlags flags, ImTextureID closeTextureID, ImTextureID openTextureID,const char* label, const char* label_end = NULL);
     IMGUI_API bool          TreeNodeBehaviorIsOpen(ImGuiID id, ImGuiTreeNodeFlags flags = 0);                     // Consume previous SetNextItemOpen() data, if any. May return true when logging
     IMGUI_API void          TreePushOverrideID(ImGuiID id);
 
