@@ -6527,7 +6527,11 @@ bool ImGui::TreeNodeBehavior_IconText(ImGuiID id, ImGuiTreeNodeFlags flags, ImTe
 
         if (g.LogEnabled)
             LogSetNextTextDecoration("###", "###");
-        window->DrawList->AddImage(is_open ? openTextureID : closeTextureID, text_pos, {text_pos.x + g.FontSize, text_pos.y + g.FontSize});
+        if (!is_leaf) {
+            window->DrawList->AddImage(is_open ? openTextureID : closeTextureID, text_pos, {text_pos.x + g.FontSize, text_pos.y + g.FontSize});
+        } else {
+            window->DrawList->AddImage(selected ? openTextureID : closeTextureID, text_pos, {text_pos.x + g.FontSize, text_pos.y + g.FontSize});
+        }
         RenderTextClipped({text_pos.x + g.FontSize + text_offset_x * 0.5f, text_pos.y}, frame_bb.Max, label, label_end, &label_size);
     }
     else
@@ -6545,7 +6549,11 @@ bool ImGui::TreeNodeBehavior_IconText(ImGuiID id, ImGuiTreeNodeFlags flags, ImTe
             RenderArrow(window->DrawList, ImVec2(text_pos.x - text_offset_x + padding.x, text_pos.y + g.FontSize * 0.15f), text_col, is_open ? ImGuiDir_Down : ImGuiDir_Right, 0.70f);
         if (g.LogEnabled)
             LogSetNextTextDecoration(">", NULL);
-        window->DrawList->AddImage(is_open ? openTextureID : closeTextureID, text_pos, {text_pos.x + g.FontSize, text_pos.y + g.FontSize});
+        if (!is_leaf) {
+            window->DrawList->AddImage(is_open ? openTextureID : closeTextureID, text_pos, {text_pos.x + g.FontSize, text_pos.y + g.FontSize});
+        } else {
+            window->DrawList->AddImage(selected ? openTextureID : closeTextureID, text_pos, {text_pos.x + g.FontSize, text_pos.y + g.FontSize});
+        }
         RenderText({text_pos.x + g.FontSize + text_offset_x * 0.5f, text_pos.y}, label, label_end, false);
     }
 
