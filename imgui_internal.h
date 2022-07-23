@@ -3139,7 +3139,6 @@ namespace ImGui
     IMGUI_API bool          TreeNodeBehavior(ImGuiID id, ImGuiTreeNodeFlags flags, const char* label, const char* label_end = NULL);
     IMGUI_API bool          TreeNodeBehavior_IconText(ImGuiID id, ImGuiTreeNodeFlags flags, ImTextureID textureID, const char* label, const char* label_end = NULL);
     IMGUI_API bool          TreeNodeBehavior_IconText(ImGuiID id, ImGuiTreeNodeFlags flags, ImTextureID closeTextureID, ImTextureID openTextureID,const char* label, const char* label_end = NULL);
-    IMGUI_API bool          TreeNodeBehaviorIsOpen(ImGuiID id, ImGuiTreeNodeFlags flags = 0);                     // Consume previous SetNextItemOpen() data, if any. May return true when logging
     IMGUI_API void          TreePushOverrideID(ImGuiID id);
     IMGUI_API void          TreeNodeSetOpen(ImGuiID id, bool open);
     IMGUI_API bool          TreeNodeUpdateNextOpen(ImGuiID id, ImGuiTreeNodeFlags flags);   // Return open state. Consume previous SetNextItemOpen() data, if any. May return true when logging.
