@@ -3886,8 +3886,8 @@ static ImDrawList* GetViewportDrawList(ImGuiViewportP* viewport, size_t drawlist
     // Our ImDrawList system requires that there is always a command
     if (viewport->DrawListsLastFrame[drawlist_no] != g.FrameCount)
     {
-        draw_list->_ResetForNewFrame();
-        draw_list->PushTextureID(g.IO.Fonts->TexID);
+        draw_list->_ResetForNewFrame(); 
+        draw_list->PushTextureID(g.IO.FontDefault->ContainerAtlas->TexID);
         draw_list->PushClipRect(viewport->Pos, viewport->Pos + viewport->Size, false);
         viewport->DrawListsLastFrame[drawlist_no] = g.FrameCount;
     }
